@@ -1,0 +1,51 @@
+{“
+    bridge”: {“
+        name”: "Dobby's House",
+        “username”: “CC: 22: 3 D: E3: 4 A: 30”,
+        “port”: 51826,
+        “pin”: “031 - 78 - 157”
+    },
+    “accessories”: [{“
+            accessory”: “Http”,
+            “name”: “SmartPlug”,
+            “on_url”: “http: //192.168.2.5/gpio/0”,
+                “off_url”: “http: //192.168.2.5/gpio/1”,
+                “http_method”: “GET”
+        },
+        {“
+            accessory”: “Http”,
+            “name”: “Smart_Light”,
+            “on_url”: “http: //192.168.2.9/crispy/0”,
+                “off_url”: “http: //192.168.2.9/crispy/1”,
+                “http_method”: “GET”
+        },
+        {“
+            accessory”: “Http”,
+            “name”: “Curtain”,
+            “on_url”: “http: //192.168.2.10/curtain/0”,
+                “off_url”: “http: //192.168.2.10/curtain/1”,
+                “http_method”: “GET”
+        },
+        {“
+            accessory”: “fan - accessory - rotation”,
+            “name”: “Room Fan”,
+            “url”: “mqtt: localhost”,
+            “topics”: {“
+                getOn”: “getFanOn”,
+                “setOn”: “OnOff”,
+                “getRotationSpeed”: “getSpeed”,
+                “setRotationSpeed”: “Speed”
+            }
+        }
+    ],
+    “platforms”: [{“
+            platform”: “config”,
+            “name”: “Config”,
+            “port”: 8082,
+            “sudo”: true
+        },
+        {“
+            platform”: “ZigBeePlatform”
+        }
+    ]
+}
