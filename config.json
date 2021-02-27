@@ -1,45 +1,43 @@
-{“
-    accessories”: [{“
-            accessory”: “Http”,
-            “name”: “SmartPlug”,
-            “on_url”: “http: //192.168.2.5/gpio/0”,
-                “off_url”: “http: //192.168.2.5/gpio/1”,
-                “http_method”: “GET”
+{
+    "bridge": {
+
+        "name": "Dobbies",
+        "username": "CC:22:3D:E3:CE:55",
+        "port": 51826,
+        "pin": "031-45-154"
+    },
+
+    "description": "Yejinius' HomeAutomation Service",
+
+    "platforms": [],
+    "accessories": [{
+            "accessory": "Http",
+            "name": "Light",
+            "switchHandling": "realtime",
+            "http_method": "GET",
+            "caption": "Stand",
+
+            "on_url": "LOCALIPADDRESS:PORT/?lighton1",
+            "off_url": "LOCALIPADDRESS:PORT/?lightoff1",
+            "status_url": "",
+            "service": "Switch",
+            "brightnessHandling": "no",
+            "brightness_url": "",
+            "brightnesslvl_url": "",
+            "username": "",
+            "password": ""
         },
-        {“
-            accessory”: “Http”,
-            “name”: “Smart_Light”,
-            “on_url”: “http: //192.168.2.9/crispy/0”,
-                “off_url”: “http: //192.168.2.9/crispy/1”,
-                “http_method”: “GET”
-        },
-        {“
-            accessory”: “Http”,
-            “name”: “Curtain”,
-            “on_url”: “http: //192.168.2.10/curtain/0”,
-                “off_url”: “http: //192.168.2.10/curtain/1”,
-                “http_method”: “GET”
-        },
-        {“
-            accessory”: “fan - accessory - rotation”,
-            “name”: “Room Fan”,
-            “url”: “mqtt: localhost”,
-            “topics”: {“
-                getOn”: “getFanOn”,
-                “setOn”: “OnOff”,
-                “getRotationSpeed”: “getSpeed”,
-                “setRotationSpeed”: “Speed”
-            }
-        }
-    ],
-    “platforms”: [{“
-            platform”: “config”,
-            “name”: “Config”,
-            “port”: 8082,
-            “sudo”: true
-        },
-        {“
-            platform”: “ZigBeePlatform”
+        {
+            "accessory": "Http",
+            "name": "MainDoor",
+
+            "switchHandling": "realtime",
+            "http_method": "GET",
+            "caption": "Maindoor",
+
+            "on_url": "LOCALIPADDRESS:PORT/?HIGH",
+            "off_url": "LOCALIPADDRESS:PORT/?LOW",
+            "status_url": ""
         }
     ]
 }
