@@ -1,11 +1,5 @@
 {“
-    bridge”: {“
-        name”: "Dobby's House",
-        “username”: “CC: 22: 3 D: E3: 4 A: 30”,
-        “port”: 51826,
-        “pin”: “031 - 78 - 157”
-    },
-    “accessories”: [{“
+    accessories”: [{“
             accessory”: “Http”,
             “name”: “SmartPlug”,
             “on_url”: “http: //192.168.2.5/gpio/0”,
